@@ -1,5 +1,7 @@
 # Cheat Note Backend
 
+https://cheatnote.onrender.com/
+
 A lightweight Express + MongoDB backend for the Cheat Note application. It stores a user-generated start string and text payload, and exposes simple API routes for registration and note updates.
 
 ## Tech Stack

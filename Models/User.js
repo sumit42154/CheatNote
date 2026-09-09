@@ -14,7 +14,7 @@ const userSchema = new mongoose.Schema({
     createdAt: {
         type: Date,
         default: Date.now,
-        expires: 10800 , 
+        expires: '3d', 
     }
 });
 export default mongoose.model("User", userSchema);

@@ -55,4 +55,26 @@ export const addText = async (req, res) => {
   }
 };
 
+export const getText = async (req, res) => {
+  const { startString } = req.body; 
+  const text = User.findOne({ startString });
 
+  try {
+    if (!text) {
+      return res.status(404).json({
+        message: "No text found for the given startString",
+        previously : false,
+      });
+    }
+    res.status(200).json({
+      message: "Text retrieved successfully",
+      text: text.textString,
+      success: true,
+    });
+  } catch (error) {
+    res.status(500).json({
+      message: "Error retrieving text",
+      success: false,
+    });
+  }
+};
